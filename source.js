@@ -52,7 +52,7 @@ function createBookCard(book) {
 
   return card;
 }
-
+// third phase
 function render() {
   bookCards.innerHTML = '';
   myLibrary.forEach((book) => {
@@ -76,9 +76,13 @@ function addBookToLibrary(event) {
 
 const addBookBtn = document.querySelector('#submit');
 addBookBtn.addEventListener('click', addBookToLibrary);
-
+// fourth phase
 const newBookBtn = document.querySelector('#new-book-btn');
 newBookBtn.addEventListener('click', () => {
   let newBookForm = document.querySelector('#new-book-form');
-  newBookForm.style.display = 'block';
+  if (newBookForm.style.display === 'block') {
+    newBookForm.style.display = 'none';
+  } else {
+    newBookForm.style.display = 'block';
+  }
 });
